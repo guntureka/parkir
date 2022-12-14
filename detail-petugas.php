@@ -28,10 +28,9 @@
                     <div class="text-center p-2">
                         <?php 
                             $id_user = $_SESSION['id_user'];
-                            $today_date = date('Y-m-d');
 
                             //hitung jumlah motor parkir
-                            $sql = "SELECT COUNT(*) AS jumlah FROM parkir WHERE jenis = 'motor' AND id_user = '$id_user' AND  waktu_masuk LIKE '$today_date%' AND waktu_keluar < '$today_date 22:00:00' OR waktu_keluar IS NULL";
+                            $sql = "SELECT COUNT(*) AS jumlah FROM parkir WHERE jenis = 'motor' AND id_user = '$id_user'";
                             $query = mysqli_query($koneksi, $sql);
                             $data = mysqli_fetch_array($query);
 
@@ -183,7 +182,7 @@
                                 <td><?= $jenis; ?></td>
                                 <td><?= $waktu_masuk; ?></td>
                                 <td><?= $waktu_keluar; ?></td>
-                                <td><?= 'R' . $biaya; ?></td>
+                                <td><?= 'Rp' . $biaya; ?></td>
                             </tr>
                             <?php } ?>
                         </tbody>
