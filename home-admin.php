@@ -10,23 +10,41 @@
 </head>
 
 <body>
+    <?php 
+        include "navbar-admin.php"
+    ?>
     <div class="container">
         <div class="login position-absolute top-50 start-50 translate-middle" style="max-width: 350px;">
             <div class="text-center">
                 <h1>DAFTAR PETUGAS</h1>
             </div>
-            <form action="" method="">
+            <div>
+                <?php 
+                    if(isset($_SESSION['fail'])){
+                        echo  "<div class='alert alert-danger' role='alert'>
+                                $_SESSION[fail]
+                            </div>";
+                        unset($_SESSION['fail']);
+                    }else if(isset($_SESSION['success'])){
+                        echo  "<div class='alert alert-success' role='alert'>
+                                $_SESSION[success]
+                            </div>";
+                        unset($_SESSION['success']);
+                    }
+                ?>
+            </div>
+            <form action="add-admin.php" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Nama" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                        aria-describedby="basic-addon1" name="nama">
                 </div>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                        aria-describedby="basic-addon1" name="username">
                 </div>
                 <div class="input-group mb-3">
                     <input type="password" class="form-control" placeholder="Password" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                        aria-describedby="basic-addon1" name="password">
                 </div>
                 <div class="text-center mb-3">
                     <button type="submit" class="btn btn-primary">Daftar</button>
