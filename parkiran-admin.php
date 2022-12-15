@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 <?php 
-                    $sql = "SELECT * FROM parkir";
+                    $sql = "SELECT * FROM parkir join user on parkir.id_user = user.id_user";
                     $query = mysqli_query($koneksi, $sql);
                     $no = 1;
                     $tanggalOld = '';
@@ -60,7 +60,7 @@
                     <td><?php echo $motor ?></td>
                     <td><?php echo $mobil ?></td>
                     <td><?php echo $total ?></td>
-                    <td><?php echo $data['id_user'] ?></td>
+                    <td><?php echo $data['nama'] ?></td>
                 <?php 
                     }
                 ?>
