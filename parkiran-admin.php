@@ -36,13 +36,13 @@
                     $tanggalOld = '';
 
                     while($data = mysqli_fetch_array($query)){
-                        $tanggal = date('d-m-Y', strtotime($data['waktu_masuk']));
+                        $tanggal = date('Y-m-d', strtotime($data['waktu_masuk']));
                         if($tanggalOld == $tanggal){
                             continue;
                         }
                         $tanggalOld = $tanggal;
                         $sql2 = "SELECT * FROM parkir WHERE waktu_masuk LIKE '$tanggal%'";
-                        $query2 = mysqli_query($koneksi, $sql);
+                        $query2 = mysqli_query($koneksi, $sql2);
                         $motor = 0;
                         $mobil = 0;
                         while($data2 = mysqli_fetch_array($query2)){

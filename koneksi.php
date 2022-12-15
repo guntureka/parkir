@@ -9,5 +9,4 @@
         die("Koneksi Gagal: " . mysqli_connect_error());
     }
     session_start();
-    $_SESSION['id_user'] = 2;
 ?>

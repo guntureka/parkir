@@ -22,6 +22,6 @@
         </ul>
     </div>
     <div>
-        <a href=""><button type="submit" class="btn btn-danger">Logout</button></a>
+        <a href="logout.php"><button type="submit" class="btn btn-danger">Logout</button></a>
     </div>
 </div>
